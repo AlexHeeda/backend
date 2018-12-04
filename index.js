@@ -136,10 +136,9 @@ app.put("/all/change/:id", (req, res) => {
 /**
  * 9.Toggle du booléen, change la valeur par l'url, si rentrez true alors false et inversement.
  */
-app.put("/all/:toggle/:id", (req, res) => {
+app.put("/all/toggle/:id", (req, res) => {
     const idwcs = req.params.id;
-    const resultt = req.params.toggle;
-    connection.query(`UPDATE wcs_api SET answer = ${resultt} WHERE id_wcs = ?`,  idwcs, err => {
+    connection.query(`UPDATE wcs_api SET answer = !answer WHERE id_wcs = ?`,  idwcs, err => {
         if (err) {
             // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
             console.log(err);
