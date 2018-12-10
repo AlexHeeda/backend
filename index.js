@@ -23,11 +23,19 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
+/**
+ * Sauvegarde la variable song avec une valeur de type string;
+ */
 app.get("/session-in", (req, res) => {
     req.session.song = "be bop a lula.";
     res.send("ok");
 });
 
+
+/**
+ * Renvoie la variable song.
+ */
 app.get("/session-out", (req, res) =>{
     res.send(req.session.song);
 });
