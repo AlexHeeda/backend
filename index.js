@@ -161,7 +161,11 @@ app.put("/all/change/:id", (req, res) => {
  */
 app.put("/all/toggle/:id", (req, res) => {
     const idwcs = req.params.id;
+<<<<<<< HEAD
     connection.query(`UPDATE wcs_api SET answer = !answer WHERE id_wcs = ?`, idwcs, err => {
+=======
+    connection.query(`UPDATE wcs_api SET answer = !answer WHERE id_wcs = ?`,  idwcs, err => {
+>>>>>>> 8fb182f1c32437544a35c3ce48705263ea771a8d
         if (err) {
             // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
             console.log(err);
